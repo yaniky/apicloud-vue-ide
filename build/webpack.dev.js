@@ -7,7 +7,7 @@ module.exports = merge(common, {
     module: {},
     output: {
         filename: "js/[name].[hash].js",
-        path: path.resolve(__dirname, "../dist"),
+        path: path.resolve(__dirname, "../widget/dist"),
         publicPath: "./" // TODO 改为绝对路径
     }
 });

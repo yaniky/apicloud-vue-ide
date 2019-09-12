@@ -5,7 +5,9 @@
 - yarn build构建
 - yarn dev开发环境（需先执行一次yarn build）
 ```txt
-可使用apicloud-studio打开dist目录，设置自动wifi同步，在dev环境下可热更新
+建议使用vscode或其他支持apicloud插件的编辑器
+
+vscode可安装apicloud插件，设置Subdirectories到目录\widget\dist，可对构建后内容进行wifi同步
 ```
 
 ## 路由
