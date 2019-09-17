@@ -66,7 +66,13 @@ module.exports = {
                     {
                         loader: "url-loader",
                         options: {
-                            limit: 10000
+                            limit: 10000,
+                            fallback: {
+                                loader:'file-loader',
+                                options: {
+                                    name: 'assets/images/[name].[ext]'
+                                }
+                            }
                         }
                     }
                 ]
@@ -84,7 +90,13 @@ module.exports = {
                     {
                         loader: "url-loader",
                         options: {
-                            limit: 100000
+                            limit: 100000,
+                            fallback: {
+                                loader:'file-loader',
+                                options: {
+                                    name: 'assets/font/[name].[ext]'
+                                }
+                            }
                         }
                     }
                 ]
