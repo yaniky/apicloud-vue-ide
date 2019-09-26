@@ -8,13 +8,13 @@ export function setRoot() {
         sWidth = window.screen.width;
         rootEl = document.documentElement;
         if (sWidth && rootEl) {
-            rootEl.style.fontSize = sWidth * baseSize / baseWidth + "px";
+            rootEl.style.fontSize = `${(sWidth * baseSize) / baseWidth}px`;
         } else if (rootEl) {
-            rootEl.style.fontSize = baseSize + "px";
+            rootEl.style.fontSize = `${baseSize}px`;
         }
     }
     screenChange();
-    window.addEventListener("resize", function() {
+    window.addEventListener("resize", () => {
         screenChange();
     });
 }

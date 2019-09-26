@@ -6,13 +6,13 @@
 
 <script>
 export default {
-  name: 'Other',
-  data() {
-    return {
-      env: APP_NODE_ENV
-    };
-  }
-}
+    name: "Other",
+    data() {
+        return {
+            env: window.APP_NODE_ENV
+        };
+    }
+};
 </script>
 
 <style scoped>

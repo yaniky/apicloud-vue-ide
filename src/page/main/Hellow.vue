@@ -1,13 +1,20 @@
 <template>
-    <div class="wrap">
-        Hellow, count is {{count}}
-        <p>getter: {{doubleCount}}</p>
-        <button style="border: 1px solid green;" @click="incrementIfOddOnRootSum">plus</button>
-    </div>
+  <div class="wrap">
+    Hellow, count is {{ count }}
+    <p>getter: {{ doubleCount }}</p>
+    <button
+      style="border: 1px solid green;"
+      @click="incrementIfOddOnRootSum"
+    >
+      plus
+    </button>
+  </div>
 </template>
 <script>
 import { createNamespacedHelpers } from "vuex";
+
 const { mapState, mapGetters, mapActions } = createNamespacedHelpers("hellow");
+
 export default {
     name: "Hellow",
     computed: {
@@ -23,7 +30,7 @@ export default {
             "incrementIfOddOnRootSum"
         ])
     }
-}
+};
 </script>
 <style lang="scss" scoped>
     .wrap {

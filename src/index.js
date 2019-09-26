@@ -3,17 +3,17 @@ import "@/plugin/apiclould.js";
 import "@/assets/style/api.css";
 
 window.apiready = function() {
-    var header = $api.dom("header"); // 获取 header 标签元素
-    var footer = $api.dom("footer"); // 获取 footer 标签元素
+    var header = window.$api.dom("header"); // 获取 header 标签元素
+    var footer = window.$api.dom("footer"); // 获取 footer 标签元素
 
     // 1.修复开启沉浸式效果带来的顶部Header与手机状态栏重合的问题，最新api.js方法已支持适配iPhoneX；
     // 2.默认已开启了沉浸式效果 config.xml中 <preference name="statusBarAppearance" value="true"/>
     // 3.沉浸式效果适配支持iOS7+，Android4.4+以上版本
-    var headerH = $api.fixStatusBar(header);
+    var headerH = window.$api.fixStatusBar(header);
     // 最新api.js为了适配iPhoneX增加的方法，修复底部Footer部分与iPhoneX的底部虚拟横条键重叠的问题；
-    var footerH = $api.fixTabBar(footer);
+    var footerH = window.$api.fixTabBar(footer);
 
-    api.openFrame({
+    window.api.openFrame({
         name: "main",
         url: "./main.html",
         bounces: true,
@@ -29,7 +29,7 @@ window.apiready = function() {
     });
 
     // 获取当前年份时间，并加载显示到页面
-    var year = $api.byId("year");
+    const year = window.$api.byId("year");
 
     year.innerHTML = new Date().getFullYear();
 };

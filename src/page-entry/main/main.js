@@ -1,7 +1,7 @@
 import "@babel/polyfill";
 import Vue from "vue";
-import App from "./Main.vue";
 import Router from "vue-router";
+import App from "./Main.vue";
 import router from "@/route/main";
 import store from "@/store/main";
 import "normalize.css";
