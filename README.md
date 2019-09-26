@@ -9,6 +9,7 @@
 
 vscode可安装apicloud插件，设置Subdirectories到目录\widget\dist，可对构建后内容进行wifi同步
 ```
+- yarn web 用于浏览器热更新开发界面
 
 ## 路由
 - 支持使用vue-route(目前只支持hash路由模式)
