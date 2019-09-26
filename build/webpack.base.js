@@ -12,10 +12,12 @@ const entryConfig = require("./entryConfig.js");
 const plugins = [
     new webpack.HashedModuleIdsPlugin(),
     new VueLoaderPlugin(),
-    new webpack.DefinePlugin(appEnv),
+    new webpack.DefinePlugin({
+        appGlobal: appEnv
+    }),
     new MiniCssExtractPlugin({
-        filename: "css/[name].[hash].css",
-        chunkFilename: "css/[id].[hash].css"
+        filename: "css/[name].css",
+        chunkFilename: "css/[id].css"
     }),
     new HtmlWebpackPlugin({
         filename: "index.html",

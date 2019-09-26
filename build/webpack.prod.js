@@ -16,7 +16,7 @@ module.exports = merge(common, {
         // })
     ],
     output: {
-        filename: "js/[name].[hash].js",
+        filename: "js/[name].js",
         path: path.resolve(__dirname, "../widget/dist"), // 这里有个坑，必须放在widget目录下vscode apicloud插件才能wifi同步
         publicPath: "./" // TODO 改为绝对路径
     },

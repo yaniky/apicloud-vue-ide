@@ -6,7 +6,8 @@ module.exports = {
     "extends": [ 'plugin:vue/recommended', 'airbnb-base' ],
     "globals": {
         "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+        "SharedArrayBuffer": "readonly",
+        "appGlobal": true
     },
     "parserOptions": {
         "ecmaVersion": 2018,

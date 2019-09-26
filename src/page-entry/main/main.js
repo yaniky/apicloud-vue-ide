@@ -8,7 +8,7 @@ import "normalize.css";
 import "@/plugin/apiclould.js";
 import "@/assets/style/api.css";
 
-window.apiready = function() {
+function startVue() {
     Vue.use(Router);
 
     new Vue({
@@ -17,4 +17,12 @@ window.apiready = function() {
         store,
         router
     });
-};
+}
+
+if (appGlobal.APP_NODE_ENV === "web") {
+    startVue();
+} else {
+    window.apiready = function() {
+        startVue();
+    };
+}

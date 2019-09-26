@@ -16,7 +16,7 @@ export default {
     name: "Home",
     data() {
         return {
-            env: window.APP_NODE_ENV
+            env: appGlobal.APP_NODE_ENV
         };
     },
     methods: {
