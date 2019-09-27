@@ -26,16 +26,16 @@ const plugins = [
     }),
     new CopyWebpackPlugin([
         {
-            from: "static/*"
+            from: "static/**/*"
         },
         {
             from: "config.xml"
         },
         {
-            from: "wgt/*"
+            from: "wgt/**/*"
         },
         {
-            from: "icon/*"
+            from: "icon/**/*"
         }
     ])
 ].concat(entryConfig.htmlPlugin);
