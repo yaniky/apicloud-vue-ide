@@ -73,3 +73,9 @@ api.openFrame({
     }
 });
 ```
+
+## 组件
+- container/Base.vue
+```txt
+兼容ios软键盘弹出，导致页面整体上移，顶部栏离开可见区域问题,需要设置softInputMode为"pan"
+```
