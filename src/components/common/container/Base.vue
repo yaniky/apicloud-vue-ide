@@ -1,21 +1,23 @@
 /**
  * @description 兼容ios键盘弹出容器
  * @author yaniky
- * @params {Number} headerHeight - header高度，单位px
  */
 <template>
-  <div
-    v-cloak
-    class="app-wrap"
-    :style="{height: 'calc(100% - ' + keyPanelHeight + 'px)'}"
-  >
-    <slot name="header" />
+  <div>
     <div
-      ref="pageWrap"
-      class="page-wrap"
-      :style="{top: headerHeight + 'px'}"
+      v-cloak
+      class="app-wrap"
+      :style="{height: 'calc(100% - ' + keyPanelHeight + 'px)', position: position}"
     >
-      <slot />
+      <slot name="header" />
+      <div
+        ref="pageWrap"
+        class="page-wrap"
+        :style="contentStyle"
+      >
+        <slot />
+      </div>
+      <slot name="footer" />
     </div>
   </div>
 </template>
@@ -24,7 +26,9 @@ export default {
     name: "Base",
     data() {
         return {
-            keyPanelHeight: 0
+            keyPanelHeight: 0,
+            safeTop: window.api ? window.api.safeArea.top : 0,
+            safeBottom: window.api ? window.api.safeArea.bottom : 0
         };
     },
     props: {
@@ -32,9 +36,21 @@ export default {
             type: Number,
             default: 10
         },
-        headerHeight: {
-            type: Number,
-            default: 44
+        position: {
+            type: String,
+            default: "absolute"
+        },
+        isFooter: {
+            type: Boolean,
+            default: false
+        }
+    },
+    computed: {
+        contentStyle() {
+            return {
+                paddingTop: `${this.safeTop}px`,
+                paddingBottom: `${this.isFooter ? this.safeBottom : 0}px`
+            };
         }
     },
     watch: {
@@ -65,8 +81,9 @@ export default {
                 if (offsetBottom < val) {
                     const needScroll = val - offsetBottom + this.marginKeyPanel;
 
-                    this.$refs.pageWrap.scrollBy(0, needScroll);
-
+                    setTimeout(() => {
+                        this.$refs.pageWrap.scrollBy(0, needScroll);
+                    }, 300);
                 }
             }
         }
@@ -86,7 +103,7 @@ export default {
     overflow: hidden;
     .page-wrap {
         position: absolute;
-        top: 88rem;
+        top: 0;
         left: 0;
         width: 100%;
         bottom: 0;

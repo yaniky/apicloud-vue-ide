@@ -19,6 +19,8 @@ module.exports = {
         "html"
     ],
     "rules": {
+        "global-require": 0,
+        
         "import/no-unresolved": [0],
 
         "no-underscore-dangle": 0,
@@ -223,7 +225,7 @@ module.exports = {
 
         "no-with": 2,//禁用with
 
-        
+        "prefer-arrow-callback": 0,
 
         "array-bracket-spacing": [2, "never"],//是否允许非空数组里面有多余的空格
 
@@ -370,7 +372,15 @@ module.exports = {
         "yoda": [2, "never"],//禁止尤达条件  
 
         "no-async-promise-executor": 0,
+
         "vue/order-in-components": 0,
-        "import/prefer-default-export": 0
+
+        "vue/require-prop-type-constructor": 0,
+
+        "import/prefer-default-export": 0,
+
+        "vue/require-default-prop": 0,
+
+        "no-restricted-syntax": 0
     }
 };

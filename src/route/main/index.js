@@ -11,6 +11,11 @@ const router = new Router({
             path: "/hellow",
             name: "Hellow",
             component: () => import("../../page/main/Hellow.vue")
+        },
+        {
+            path: "/next-demo",
+            name: "NextDemo",
+            component: () => import("../../page/main/NextDemo.vue")
         }
     ]
 });

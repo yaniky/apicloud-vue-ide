@@ -37,42 +37,17 @@ page-entry
 ## 路由
 - 支持使用vue-route(目前只支持hash路由模式)
 ```js
-import "@babel/polyfill";
-import Vue from "vue";
-import App from "./Main.vue";
-import Router from "vue-router";
-import router from "@/route";
-import store from "@/store";
-import "normalize.css";
-import "@/plugin/apiclould.js";
-import "@/assets/style/api.css";
-
-window.apiready = function() {
-    Vue.use(Router);
-
-    new Vue({
-        el: "#app",
-        render: h => h(App),
-        store,
-        router
-    });
-};
-```
-- 支持使用apicloud openFrame等方式
-```js
-api.openFrame({
-    name: 'other',
-    url: './other.html',
-    rect: {
-        marginTop: api.pageParam.headerH,
-        marginBottom: api.pageParam.footerH,
-        w: "auto"
-    },
-    pageParam: {
-        name: 'test'
-    }
+window.api.openWin({
+    name: "main",
+    url: "widget://main.html",
+    useWKWebView: true,
+    historyGestureEnabled: true,
+    softInputMode: "pan",
+    slidBackType: "edge",
+    softInputDismissMode: ["tap", "drag"]
 });
 ```
+- 支持使用apicloud 自身 openWin openFrame等方式
 
 ## 组件
 - container/Base.vue

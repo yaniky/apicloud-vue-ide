@@ -7,8 +7,10 @@ import store from "@/store/main";
 import "normalize.css";
 import "@/plugin/apiclould.js";
 import "@/assets/style/api.css";
+import { setRoot } from "@/assets/script/base.js";
 
 function startVue() {
+    setRoot();
     Vue.use(Router);
 
     new Vue({
