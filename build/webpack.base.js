@@ -3,7 +3,6 @@ const webpack = require("webpack");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const env = require("../config");
 const tools = require("../config/tools");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const appEnv = tools.filterAppEnv(env);
@@ -14,10 +13,6 @@ const plugins = [
     new VueLoaderPlugin(),
     new webpack.DefinePlugin({
         appGlobal: appEnv
-    }),
-    new MiniCssExtractPlugin({
-        filename: "css/[name].css",
-        chunkFilename: "css/[id].css"
     }),
     new HtmlWebpackPlugin({
         filename: "index.html",
@@ -51,12 +46,7 @@ module.exports = {
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            publicPath: "./css/"
-                        }
-                    },
+                    "style-loader",
                     "css-loader",
                     "postcss-loader",
                     "sass-loader"
@@ -68,7 +58,7 @@ module.exports = {
                     {
                         loader: "url-loader",
                         options: {
-                            limit: 999999999,
+                            limit: 10000,
                             fallback: {
                                 loader:'file-loader',
                                 options: {
@@ -92,7 +82,7 @@ module.exports = {
                     {
                         loader: "url-loader",
                         options: {
-                            limit: 999999999,
+                            limit: 10000,
                             fallback: {
                                 loader:'file-loader',
                                 options: {
