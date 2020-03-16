@@ -1,4 +1,3 @@
-import "@babel/polyfill";
 import Vue from "vue";
 import App from "./Main.vue";
 import "normalize.css";
