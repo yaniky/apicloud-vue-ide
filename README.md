@@ -4,7 +4,7 @@
 ## 开发
 - yarn build构建
 - yarn dev开发环境（需先执行一次yarn build）
-- yarn hotdev 支持热更新(url 需已APP_ROOT为更目录，如`${appGlobal.APP_ROOT}main.html`)
+- yarn hotdev 支持热更新(url 需已APP_ROOT为更目录，如`${appGlobal.APP_ROOT}main.html`, 需配置local.env.js devHost为本机ip,如devHost: "http://192.168.1.113")
 ```txt
 建议使用vscode或其他支持apicloud插件的编辑器
 
