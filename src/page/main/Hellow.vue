@@ -60,9 +60,15 @@ export default {
             "incrementIfOddOnRootSum"
         ]),
         _toNext() {
-            this.$router.ani = 1;
-            this.$router.push({
-                name: "NextDemo"
+            // 注释部分为使用vue router
+            // this.$router.ani = 1;
+            // this.$router.push({
+            //     name: "NextDemo"
+            // });
+            window.api.openWin({
+                name: "other",
+                url: `${appGlobal.APP_ROOT}other.html`,
+                useWKWebView: true
             });
         }
     },

@@ -4,6 +4,7 @@
 ## 开发
 - yarn build构建
 - yarn dev开发环境（需先执行一次yarn build）
+- yarn hotdev 支持热更新(url 需已APP_ROOT为更目录，如`${appGlobal.APP_ROOT}main.html`)
 ```txt
 建议使用vscode或其他支持apicloud插件的编辑器
 
@@ -35,7 +36,7 @@ page-entry
 - 将widget/dist下文件通过svn上传到apicloud平台，生成app
 
 ## 路由
-- 支持使用vue-route(目前只支持hash路由模式)
+- 支持使用vue-route(目前只支持hash路由模式)(page-entry/main为演示demo)
 ```js
 window.api.openWin({
     name: "main",
@@ -47,7 +48,7 @@ window.api.openWin({
     softInputDismissMode: ["tap", "drag"]
 });
 ```
-- 支持使用apicloud 自身 openWin openFrame等方式
+- 支持使用apicloud 自身 openWin openFrame等方式（page-entry/other为演示demo）
 
 ## 组件
 - container/Base.vue

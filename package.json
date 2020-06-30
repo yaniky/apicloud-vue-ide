@@ -1,9 +1,10 @@
 {
   "name": "apicloud-vue-ide",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "apicloud vue 自定义框架",
   "scripts": {
     "web": "yarn createEntryConfig && cross-env BUILD_ENV=web webpack-dev-server --hot --config build/webpack.web.js",
+    "hotdev": "yarn createEntryConfig && cross-env BUILD_ENV=development BUILD_DEV=hot webpack --config build/webpack.dev.js && cross-env BUILD_ENV=development BUILD_DEV=hot webpack-dev-server --hot --config build/webpack.hot.js",
     "dev": "yarn createEntryConfig && cross-env BUILD_ENV=development webpack --watch --config build/webpack.dev.js",
     "build": "yarn createEntryConfig && cross-env BUILD_ENV=production webpack --config build/webpack.prod.js",
     "lint": "eslint --fix --ext .js,.vue ./src/",
